@@ -41,33 +41,35 @@ if (aboutShowDiv) {
 
 }
 
-const displayed = document.querySelector(".intro_wrap .displayed");
 
-if (displayed) {
-    console.log("working")
 
-    const mm = gsap.matchMedia();
-    mm.add("(min-width:769px)", () => {
-        gsap.to(".img", {
+const intro = document.querySelector(".intro_wrap .intro");
+
+if (intro) {
+
+    const descheight = intro.querySelector(".desc");
+    const bLink = intro.querySelector(".desc .show_btn");
+    const imgPin = intro.querySelector(".image .img");
+    
+    bLink.addEventListener('click', ()=> {
+
+        console.log(descheight.offsetHeight);
+        gsap.to(imgPin, {
             scrollTrigger: {
-                trigger: ".intro",
+                trigger: intro,
                 start: "top top",
                 pin: true,
                 pinSpacing: false,
-                endTrigger: ".intro ",
-                end: "bottom bottom",
-                markers: true
+                endTrigger: intro,
+                end: () => "top  + descheight.offsetHeight",
+                // end: () => `top  + ${descheight.offsetHeight}`,
+                markers: true,
             },
+            
         });
-    });
-    mm.add("(max-width:768px)", () => {
-        gsap.to(".img", {
-            scrollTrigger: {
-                pin: false,
-            },
-        });
-    });
+    })
 }
+
 
 gsap.utils.toArray(".pub-slider").forEach(container => {
     let children = gsap.utils.toArray(container.children) // number of slides
@@ -80,7 +82,30 @@ gsap.utils.toArray(".pub-slider").forEach(container => {
           speed: 1100,
           slidesToShow: 3,
           waitForAnimate: false,
-          infinite: false
+          infinite: false,
+          mobileFirst:true,
+          responsive: [
+            {
+              breakpoint: 769,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            
+            {
+              breakpoint: 481,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            
+            {
+              breakpoint: 100,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
         });
         
         
@@ -113,7 +138,30 @@ gsap.utils.toArray(".press-slider").forEach(container => {
           slidesToShow: 3,
           slidesToScroll: 1,
           waitForAnimate: false,
-          infinite: false
+          infinite: false,
+          mobileFirst:true,
+          responsive: [
+            {
+              breakpoint: 769,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            
+            {
+              breakpoint: 481,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            
+            {
+              breakpoint: 100,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
         });
         
         
@@ -147,6 +195,7 @@ if (service) {
                 pinSpacing: false,
                 endTrigger: service,
                 end: "bottom center",
+                // markers: true
             },
         });
     });
@@ -162,7 +211,7 @@ if (service) {
 
 $(document).ready(function(){
     $('.clients-slider').slick({
-        slidesToShow: 4,
+        slidesToShow: 5,
         // slidesToScroll: 20,
         infinite: true,
         autoplay: true,
@@ -171,18 +220,29 @@ $(document).ready(function(){
         cssEase: "linear",
         arrows: false,
         dots: false,
-        responsive: [{
-            breakpoint: 768,
+        mobileFirst:true,
+        responsive: [
+          {
+            breakpoint: 769,
             settings: {
-                slidesToShow: 3
-            }
-        }, 
-        {
-            breakpoint: 480,
+              slidesToShow: 5,
+            },
+          },
+          
+          {
+            breakpoint: 481,
             settings: {
-                slidesToShow: 2
-            }
-        }]
+              slidesToShow: 3,
+            },
+          },
+          
+          {
+            breakpoint: 100,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+        ],
     });
 });
   
@@ -191,7 +251,6 @@ $(document).ready(function(){
     $('.rev-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
         speed: 3000,
         draggable:true,
         cssEase: "linear",
@@ -199,26 +258,54 @@ $(document).ready(function(){
         dots: true,
         prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
         nextArrow:"<button type='button' class='slick-next pull-left'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+        mobileFirst: true,
+        responsive: [
+            {
+              breakpoint: 769,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+              },
+            },
+            
+            {
+              breakpoint: 100,
+              settings: {
+                centerMode: false,
+              },
+            },
+        ],
     });
 });
 
 
 
-
-
-
-
-
-
-
-
-// responsive: [{
-    //     breakpoint: 300,
-    //     settings: {
-    //         "unslick" // destroys slick
-    //     }
-    // }
-    // }]
-
-
     
+
+// const displayed = document.querySelector(".intro_wrap .displayed");
+
+// if (displayed) {
+//     console.log("working");
+
+//     const mm = gsap.matchMedia();
+//     mm.add("(min-width:769px)", () => {
+//         gsap.to(".img", {
+//             scrollTrigger: {
+//                 trigger: ".intro",
+//                 start: "top top",
+//                 pin: true,
+//                 pinSpacing: false,
+//                 endTrigger: ".intro ",
+//                 end: "bottom bottom",
+//                 markers: true
+//             },
+//         });
+//     });
+//     mm.add("(max-width:768px)", () => {
+//         gsap.to(".img", {
+//             scrollTrigger: {
+//                 pin: false,
+//             },
+//         });
+//     });
+// }

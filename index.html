@@ -23,48 +23,88 @@
     
     
     <header>
-        <div class="uk-container">
-            <ul class="header_nav">
+        <div class="uk-container uk-container-expand">
+            <ul class="header_nav uk-navbar-nav uk-visible@m" data-uk-scrollspy-nav="closest: li; scroll: true; offset: 0; smoothscroll: true ">
                 <li>
-                    <a href="">
+                    <a href="#home">
                         <div class="logo">
                             <img src="./images/logo.png" alt="">
                         </div>
                     </a>
                 </li>
                 <li>
-                    <a href="">About</a>
+                    <a href="#about"  >About</a>
                 </li>
                 <li>
-                    <a href="">Publications</a>
+                    <a href="#publications"  >Publications</a>
                 </li>
                 <li>
-                    <a href="">Services</a>
+                    <a href="#services"  >Services</a>
                 </li>
                 <li>
-                    <a href="">Clients</a>
+                    <a href="#clients"  >Clients</a>
                 </li>
                 <li>
-                    <a href="">Testimonials</a>
+                    <a href="#testimonials"  >Testimonials</a>
                 </li>
                 <li>
-                    <a href="">Press</a>
+                    <a href="#press"  >Press</a>
                 </li>
                 <li>
-                    <a href="">Professional Affiliation</a>
+                    <a href="#affiliation"  >Professional Affiliation</a>
                 </li>
                 <li>
-                    <a href="">Blog</a>
+                    <a href="#blog"  >Blog</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="#contact" >Contact</a>
                 </li>
             </ul>
+            <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon uk-toggle="target: #sidenav"></a>
+            <div id="sidenav" uk-offcanvas="" class="uk-offcanvas">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <a href="/" class="uk-navbar-item uk-logo">
+                        <div class="logo">
+                            <img src="./images/logo.png" alt="">
+                        </div>
+                    </a>
+                    <ul class=" uk-nav">
+                        <li>
+                            <a href="#about"  >About</a>
+                        </li>
+                        <li>
+                            <a href="#publications"  >Publications</a>
+                        </li>
+                        <li>
+                            <a href="#services"  >Services</a>
+                        </li>
+                        <li>
+                            <a href="#clients"  >Clients</a>
+                        </li>
+                        <li>
+                            <a href="#testimonials"  >Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#press"  >Press</a>
+                        </li>
+                        <li>
+                            <a href="#affiliation"  >Professional Affiliation</a>
+                        </li>
+                        <li>
+                            <a href="#blog"  >Blog</a>
+                        </li>
+                        <li>
+                            <a href="#contact" >Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
 
 
-    <div class="banner vh">
+    <div class="banner vh" id="home">
         <div class="uk-container">
             <div class="banner-content">
                 <div class="banner-text">
@@ -79,17 +119,18 @@
     </div>
 
 
-    <div class="ptb ">
+    <div class="ptb uk-section " id="about" >
         <!-- https://ribalta.pt/ -->
         <div class="uk-container">
             <div class="intro_wrap">
                 <div class="intro">
-                    <div class="image">
+                    <div class="image flex50">
                         <img class="img" src="/images/PrajwalBaral.jpg" alt="">
                     </div>
-                    <div class="desc ">
+                    <div class="desc flex50">
                         <div class="heading">
                             <h2>Prajwal Baral</h2>
+                            <h4>Impact Consultant &nbsp; | &nbsp; Builder</h4>
                         </div>
                         <p>
                             Mr. Prajwal Baral works at the intersection of low carbon technology, sustainable finance and 
@@ -102,7 +143,7 @@
                             of new technologies with individuals or companies seeking to commercialize, license or otherwise 
                             distribute a green technology.  
                         </p>
-                        <!-- <p>
+                        <p>
                             He was later headhunted by Korea Technology Finance Corporation (S Korea) 
                             as the first non-Korean hire in its history of 30 years to set up a financing facility for climate technologies, 
                             backed by a tailored technology rating and valuation system. In 2017, he was headhunted by the Development 
@@ -113,8 +154,8 @@
                             focus on sustainable finance. At the Inquiry, as a Senior Advisor, he also led a technical report on Market 
                             Dynamics for the Central Banks and Supervisors Network for Greening the Financial System (NGFS) under its 
                             workstream on scaling up green finance.
-                        </p> -->
-                        <!-- <p>
+                        </p>
+                        <p>
                             He later served as a Member of the Joint NGFS-INSPIRE Study Group on Biodiversity and Financial Stability. 
                             At the UNDP, he led an initial scoping study to assess financial risks of nature-related loss in global insurance 
                             industry - the first of its kind for the insurance sector. He has consulted for the Capital Markets & Investments 
@@ -122,7 +163,7 @@
                             operations, and providing climate risk assessment service to IFC's investment projects. In addition, he serves as a 
                             transaction advisor to the International Renewable Energy Agency (IRENA) - advancing renewable energy projects 
                             (solar, wind, hydro, biomass) towards financial closure. 
-                        </p> -->
+                        </p>
                         <p class="last-child">
                             Mr. Baral has authored numerous papers and book chapters that cover topical issues in infrastructure and 
                             development finance, international trade, energy, and climate change. He writes regularly for popular print 
@@ -132,7 +173,15 @@
                             through Hornfels Group Pvt. Ltd. that he co-founded in 2018. 
                         </p>
                         <div class="show_btn">
-                            <p><i class="fa-solid fa-chevron-down"></i> Read More</p>
+                            <div class="cta">
+                                <span> Read More</span>
+                                <div class="icon">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <i class="bl"></i>
+                                <i class="bt"></i>
+                                <i class="br"></i>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -144,7 +193,7 @@
     <div class="ptb2">
         <div class="uk-container">
             <div class="lead_in" style="background-image: url('/images/home-bg.jpg');">
-                <div class="lead-text">
+                <div class="lead-text uk-scrollspy-init-inview" uk-scrollspy="cls: uk-animation-fade;">
                     <div class="edu">
                         <h3>MSc in Engineering, University of Oxford </h3>
                     </div>
@@ -159,9 +208,9 @@
     </div>
 
 
-    <div class="ptb">
+    <div class="ptb" id="publications">
         <div class="uk-container">
-            <div class="slick-heading">
+            <div class="slick-heading h-width">
                 <h2>Publications</h2>
                 <p>A select list of Mr. Baral's publications is provided below. These cover topical issues in infrastructure and 
                     development finance, international trade, energy, and climate change. His work has been cited by the likes of 
@@ -292,17 +341,17 @@
     
 
     
-    <div class="ptb white">
+    <div class="ptb white" id="services">
         <div class="uk-container">
             <div class="services ">
-                <div class="heading">
+                <div class="heading flex50 ">
                     <h2>Services</h2>
                     <p>Mr. Baral, an engineer by training and a development finance expert by practice, brings a unique interdisciplinary 
                         approach in his service delivery. Mr. Baral offers services that are tailored to individual clients. The services 
                         delivered to private clients are kept strictly confidential.
                     </p>
                 </div>
-                <ul class="components">
+                <ul class="components flex50">
                     <li class="component_wrap">
                         <div class="title">
                             <img src="./images/energy.png" alt="">
@@ -355,11 +404,11 @@
     </div>
 
 
-    <div class=" clients-bg">
+    <div class=" clients-bg" id="clients">
         <div class="uk-container">
-            <div class="clients">
+            <div class="clients ">
                 <!-- https://www.sdu.com.np/global-partners/ -->
-                <div class="heading">
+                <div class="heading h-width">
                     <h2>Clients & Past Employers</h2>
                     <p>Mr. Baral has worked with private firms, national governments, multilateral organizations, think tanks, 
                         academia, and non-profits in Asia, Africa, Europe, and North America, and has delivered excellent results. 
@@ -473,10 +522,10 @@
     </div>
 
 
-    <div class="ptb white">
+    <div class="ptb white" id="testimonials">
         <div class="uk-container">
             <div class="testimonials">
-                <div class="heading">
+                <div class="heading h-width">
                     <h2>Testimonials</h2>
                     <p>There are ample reasons that people enjoy working with Mr. Baral. Learn from the testimonials below what 
                         some of his previous colleagues have to say about him.</p>
@@ -595,9 +644,9 @@
     </div>
 
 
-    <div class="ptb">
+    <div class="ptb" id="press">
         <div class="uk-container">
-            <div class="slick-heading">
+            <div class="slick-heading h-width">
                 <h2>Press</h2>
             </div>
             <div class="slick-wrapper press">
@@ -768,57 +817,64 @@
     </div>
 
 
-    <div class="ptb">
+    <div class="ptb" id="affiliation">
         <div class="uk-container">
             <div class="affiliations-wrap">
                 <div class="heading">
                     <h2>Personal Affiliations</h2>
                 </div>
                 <ul class="aff-lists">
-                    <li>
-                        <a href="https://www.inspiregreenfinance.org/" target="_blank">Member, Joint NGFS-INSPIRE Study Group on Biodiversity and Financial Stability (2021)
+                    <li class="flex48">
+                        <a href="https://www.inspiregreenfinance.org/" target="_blank">
+                            <span>Member, Joint NGFS-INSPIRE Study Group on Biodiversity and Financial Stability (2021)</span>
                             <div class="icon">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="" target="_blank">National Lead, Climate Launchpad Russia (2019)
+                    <li class="flex48">
+                        <a href="" target="_blank">
+                            <span>National Lead, Climate Launchpad Russia (2019)</span>
                             <div class="icon">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="" target="_blank">Reviewer, Asian Development Perspectives (ADP) (2019)
+                    <li class="flex48">
+                        <a href="" target="_blank">
+                            <span>Reviewer, Asian Development Perspectives (ADP) (2019)</span>
                             <div class="icon">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="" target="_blank">Party State Observer, The Green Climate Fund (GCF) Board Meeting (2017)
+                    <li class="flex48">
+                        <a href="" target="_blank">
+                            <span>Party State Observer, The Green Climate Fund (GCF) Board Meeting (2017)</span>
                             <div class="icon">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="" target="_blank">Advisory Board Member, WIPO GREEN – The Marketplace for Sustainable Technology (2017-2018)
+                    <li class="flex48">
+                        <a href="" target="_blank">
+                            <span>Advisory Board Member, WIPO GREEN – The Marketplace for Sustainable Technology (2017-2018)</span>
                             <div class="icon">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="" target="_blank">Future Energy Leader, The World Energy Council, London (2016-19)
+                    <li class="flex48">
+                        <a href="" target="_blank">
+                            <span>Future Energy Leader, The World Energy Council, London (2016-19)</span>
                             <div class="icon">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="" target="_blank">Non-Resident Research Fellow, African Center for Technology Studies (ACTS), Nairobi (2014-18)
+                    <li class="flex48">
+                        <a href="" target="_blank">
+                            <span>Non-Resident Research Fellow, African Center for Technology Studies (ACTS), Nairobi (2014-18)</span>
                             <div class="icon">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
@@ -830,16 +886,16 @@
     </div>
 
 
-    <div class="ptb white">
+    <div class="ptb white"  id="blog">
         <div class="uk-container">
             <div class="heading">
                 <h2>Blogs</h2>
             </div>
             <div class="blogs">
-                <a class="bcard">
+                <a href="blog.html" class="bcard flex48">
                     <div class="bcard-wrap">
                         <div class="image">
-                            <img src="./images/press1.png" alt="">
+                            <img src="./images/blog1.jpg" alt="">
                         </div>
                         <div class="b-desc">
                             <h4>How to be practical about carbon pricing (Environmental Finance)</h4>
@@ -851,24 +907,23 @@
                         </div>
                     </div>
                 </a>
-                <a class="bcard">
+                <a href="blog.html" class="bcard flex48">
                     <div class="bcard-wrap">
                         <div class="image">
-                            <img src="./images/press1.png" alt="">
+                            <img src="./images/blog2.jpg" alt="">
                         </div>
                         <div class="b-desc">
-                            <h4>How to be practical about carbon pricing (Environmental Finance)</h4>
-                            <p class="desc">Carbon pricing has a critical role to play in combating climate change but scaling it up will take time, says Prajwal Baral.</p>
+                            <h4>Engagement with Nepal: Crucial for US diplomacy in region (The Himalayan Times, November 2020)</h4>
+                            <p class="desc">With the Biden administration likely to adopt a “diplomacy-first” approach to reaffirm its economic and political interest in the Indo-Pacific region, Nepal should be seen as a geopolitical balancer between India and China, and not mistaken as pro-China or anti-India.</p>
                             <div class="date">
                                 <p><i class="fa-solid fa-calendar-days"></i> Mar, 2021</p>
                             </div>
                         </div>
                     </div>
                 </a>
-
             </div>
 
-            <a href="blogs.html" class="cta">
+            <a href="blogcollection.html" class="cta">
                 <span>See all blogs</span>
                 <div class="icon">
                     <i class="fa-solid fa-arrow-right-long"></i>
@@ -881,7 +936,7 @@
     </div>
 
     
-    <footer >
+    <footer  id="contact">
         <div class="uk-container">
             <div class="footer-wrap">
                 <div class="voice">
