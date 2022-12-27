@@ -212,9 +212,8 @@ if (service) {
 $(document).ready(function(){
     $('.clients-slider').slick({
         slidesToShow: 5,
-        // slidesToScroll: 20,
         infinite: true,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 0,
         speed: 6000,
         cssEase: "linear",
