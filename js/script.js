@@ -41,27 +41,6 @@ if (slideContainer) {
 
 
 
-// const builderBtn = document.querySelector("a.builderBtn");
-// const builderPage = document.querySelector(".builder");
-
-// if (builderBtn) {
-
-//   const close = builderPage.querySelector(".uk-offcanvas-close");
-
-//   builderBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     builderPage.classList.toggle("display");
-//     // $("body").css("overflow-y", "hidden");
-//   });
-
-//   close.addEventListener("click", () => {
-//     builderPage.classList.remove("display");
-//     // $("body").css("overflow-y", "scroll");
-//   });
-
-// }
-
-
 const aboutShowDiv = document.querySelector(".intro .desc");
 
 if (aboutShowDiv) {
@@ -206,7 +185,7 @@ if (service) {
         pin: ".services .heading",
         pinSpacing: false,
         endTrigger: service,
-        end: "bottom center",
+        end: "bottom center+=10%",
       },
     });
   });
