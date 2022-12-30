@@ -241,7 +241,7 @@ $(document).ready(function () {
   $(".rev-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    speed: 3000,
+    speed: 2000,
     draggable: true,
     cssEase: "linear",
     arrows: true,
