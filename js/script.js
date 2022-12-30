@@ -20,48 +20,97 @@ $(function () {
   });
 });
 
+
+let slideContainer = document.querySelector(".builder");
+
+if (slideContainer) {
+  let sections = gsap.utils.toArray(".b_section");
+
+  gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none", // <-- IMPORTANT!
+      scrollTrigger: {
+        trigger: slideContainer,
+        pin: true,
+        scrub: 0.1,
+        //snap: directionalSnap(1 / (sections.length - 1)),
+        end: "+=3000"
+      }
+    });
+}
+
+
+
+// const builderBtn = document.querySelector("a.builderBtn");
+// const builderPage = document.querySelector(".builder");
+
+// if (builderBtn) {
+
+//   const close = builderPage.querySelector(".uk-offcanvas-close");
+
+//   builderBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     builderPage.classList.toggle("display");
+//     // $("body").css("overflow-y", "hidden");
+//   });
+
+//   close.addEventListener("click", () => {
+//     builderPage.classList.remove("display");
+//     // $("body").css("overflow-y", "scroll");
+//   });
+
+// }
+
+
 const aboutShowDiv = document.querySelector(".intro .desc");
 
 if (aboutShowDiv) {
   const btn = aboutShowDiv.querySelector(".show_btn");
-  const wrap = document.querySelector(".intro_wrap .intro ");
 
   btn.addEventListener("click", () => {
     aboutShowDiv.classList.toggle("display");
-    wrap.classList.toggle("displayed");
   });
 }
+
 
 const intro = document.querySelector(".intro_wrap .intro");
 
 if (intro) {
-  const descheight = intro.querySelector(".desc");
   const bLink = intro.querySelector(".desc .show_btn");
   const imgPin = intro.querySelector(".image .img");
 
   bLink.addEventListener("click", () => {
-    console.log(descheight.offsetHeight);
 
-    ScrollTrigger.create({
-      trigger: intro,
-      start: "top top",
-      end: "bottom bottom",
-      pin: imgPin,
+    const mm = gsap.matchMedia();
+    mm.add("(min-width:769px)", () => {
+      gsap.to(".img", {
+        scrollTrigger: {
+          trigger: intro,
+          start: "top top",
+          end: "bottom bottom",
+          pin: imgPin,
+        },
+      });
+    });
+    mm.add("(max-width:768px)", () => {
+      gsap.to(".img", {
+        scrollTrigger: {
+          pin: false,
+        },
+      });
     });
   });
 }
 
-gsap.utils.toArray(".pub-slider").forEach((container) => {
-  let children = gsap.utils.toArray(container.children); // number of slides
-  let slick = $(container).slick({
+
+$(document).ready(function () {
+  $(".pub-slider").slick ({
     centerPadding: "0px",
     arrows: false,
     dots: true,
     autoplay: false,
     draggable: true,
     speed: 1100,
-    slidesToShow: 3,
-    waitForAnimate: false,
     infinite: false,
     mobileFirst: true,
     responsive: [
@@ -69,6 +118,7 @@ gsap.utils.toArray(".pub-slider").forEach((container) => {
         breakpoint: 769,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
 
@@ -76,6 +126,7 @@ gsap.utils.toArray(".pub-slider").forEach((container) => {
         breakpoint: 481,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
 
@@ -83,39 +134,28 @@ gsap.utils.toArray(".pub-slider").forEach((container) => {
         breakpoint: 100,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          prevArrow:
+            "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+          nextArrow:
+            "<button type='button' class='slick-next pull-left'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+          dots: false
         },
       },
     ],
   });
-
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "top top+=20%",
-      endtrigger: container,
-      end: "+=500",
-      scrub: true,
-      pin: ".slick-wrapper",
-    },
-  });
-  let changeSlide = () =>
-    slick.slick(tl.scrollTrigger.direction < 0 ? "slickPrev" : "slickNext");
-  children.forEach((child, i) => tl.add(changeSlide, i + 1));
-  tl.set({}, { delay: 1 });
 });
 
-gsap.utils.toArray(".press-slider").forEach((container) => {
-  let children = gsap.utils.toArray(container.children); // number of slides
-  let slick = $(container).slick({
+
+$(document).ready(function () {
+  $(".press-slider").slick ({
     centerPadding: "0px",
     arrows: false,
     dots: true,
     autoplay: false,
     draggable: true,
     speed: 1100,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    waitForAnimate: false,
     infinite: false,
     mobileFirst: true,
     responsive: [
@@ -123,6 +163,7 @@ gsap.utils.toArray(".press-slider").forEach((container) => {
         breakpoint: 769,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
 
@@ -130,6 +171,7 @@ gsap.utils.toArray(".press-slider").forEach((container) => {
         breakpoint: 481,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
 
@@ -137,26 +179,20 @@ gsap.utils.toArray(".press-slider").forEach((container) => {
         breakpoint: 100,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          prevArrow:
+            "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+          nextArrow:
+            "<button type='button' class='slick-next pull-left'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+          dots: false
         },
       },
     ],
   });
-
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "top top+=20%",
-      endtrigger: container,
-      end: "+=500",
-      scrub: true,
-      pin: ".press",
-    },
-  });
-  let changeSlide = () =>
-    slick.slick(tl.scrollTrigger.direction < 0 ? "slickPrev" : "slickNext");
-  children.forEach((child, i) => tl.add(changeSlide, i + 1));
-  tl.set({}, { delay: 1 });
 });
+
+
 
 const service = document.querySelector(".services");
 
@@ -171,7 +207,6 @@ if (service) {
         pinSpacing: false,
         endTrigger: service,
         end: "bottom center",
-        // markers: true
       },
     });
   });
@@ -183,6 +218,7 @@ if (service) {
     });
   });
 }
+
 
 $(document).ready(function () {
   $(".clients-slider").slick({
@@ -221,6 +257,7 @@ $(document).ready(function () {
   });
 });
 
+
 $(document).ready(function () {
   $(".rev-slider").slick({
     slidesToShow: 1,
@@ -253,31 +290,3 @@ $(document).ready(function () {
     ],
   });
 });
-
-// const displayed = document.querySelector(".intro_wrap .displayed");
-
-// if (displayed) {
-//     console.log("working");
-
-//     const mm = gsap.matchMedia();
-//     mm.add("(min-width:769px)", () => {
-//         gsap.to(".img", {
-//             scrollTrigger: {
-//                 trigger: ".intro",
-//                 start: "top top",
-//                 pin: true,
-//                 pinSpacing: false,
-//                 endTrigger: ".intro ",
-//                 end: "bottom bottom",
-//                 markers: true
-//             },
-//         });
-//     });
-//     mm.add("(max-width:768px)", () => {
-//         gsap.to(".img", {
-//             scrollTrigger: {
-//                 pin: false,
-//             },
-//         });
-//     });
-// }
