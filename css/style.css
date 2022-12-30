@@ -1747,6 +1747,11 @@ form .cta.input::before, form .cta.input .bl, form .cta.input .bt, form .cta.inp
   padding: 22vh 280px;
 }
 
+.builder .banner .lead h3 {
+  color: #ffffff;
+  text-shadow: 0 1px 13px #95abbb;
+}
+
 .builder .builder-intro {
   background-color: #ffffff;
   padding: 16vh 80px;
