@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: DIN;
   color: #231f20;
@@ -275,6 +279,8 @@ p {
   color: #c9dff0;
   font-size: 16px;
   font-family: inherit;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .form .form-item input::-webkit-input-placeholder {
@@ -311,6 +317,7 @@ p {
 
 .form .form-item input:focus-visible {
   outline: none;
+  opacity: 0.2;
 }
 
 .form .form-item textarea {
@@ -360,6 +367,7 @@ p {
 
 .form .form-item textarea:focus-visible {
   outline: none;
+  opacity: 0.2;
 }
 
 .form .form-item:last-child {
@@ -528,7 +536,7 @@ header {
   transition: 0.4s;
 }
 
-header .header_nav {
+header .flex-nav {
   padding: 20px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -543,16 +551,34 @@ header .header_nav {
           justify-content: space-between;
 }
 
+header .flex-nav .headerLogo {
+  width: 24vw;
+}
+
+header .logo {
+  width: 224px;
+}
+
+header .header_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 56px;
+}
+
 header .header_nav li a {
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
   min-height: auto;
-}
-
-header .header_nav li a .logo {
-  width: 224px;
-  margin-right: 24px;
 }
 
 .banner .banner-content {
