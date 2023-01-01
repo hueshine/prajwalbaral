@@ -21,6 +21,7 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+  font-family: DIN;
 }
 
 a:hover {
@@ -68,6 +69,7 @@ h3 {
 p {
   font-size: 17px;
   line-height: 1.6;
+  font-family: DIN;
 }
 
 @media screen and (max-width: 480px) {
