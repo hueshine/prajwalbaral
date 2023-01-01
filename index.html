@@ -21,8 +21,8 @@
 </head>
 <body >
     
-    
-    <!-- Header in inside pages, form active border bottom, responsive builder  -->
+
+    <!-- Builder, Responsive -->
     
     <header>
         <div class="uk-container uk-container-expand">
@@ -1319,8 +1319,14 @@
     </footer>
 
     <div class="copyright">
-        <p>© 2022 PRAJWAL BARAL</p>
+        <p id="copyright"></p>
     </div>
+
+    
+  <script>
+    const copyright = `©${new Date().getFullYear()} Prajwal Baral`;
+    document.getElementById("copyright").innerText = copyright;
+  </script>
 
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> 
